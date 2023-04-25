@@ -3,7 +3,8 @@ import { log } from './logger';
 // eslint-disable-next-line no-self-compare
 const prodDoc = 'yeatmanlab' === 'yeatmanlab' ? ['prod', 'roar-prod'] : ['external', 'yeatmanlab'];
 // eslint-disable-next-line no-undef
-const rootDoc = ROAR_DB_DOC === 'production' ? prodDoc : ['dev', 'my-roar-app'];
+// const rootDoc = ROAR_DB_DOC === 'production' ? prodDoc : ['dev', 'my-roar-app'];
+const rootDoc =  prodDoc;
 
 /* eslint-disable import/prefer-default-export */
 export const roarConfig = {

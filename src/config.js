@@ -16,13 +16,14 @@ function configTaskInfo() {
     taskDescription: 'Minimal working example of a ROAR-mep app',
     variantDescription: 'default',
     // eslint-disable-next-line no-undef
-    srcHash: SRC_HASH,
+    // srcHash: SRC_HASH,
+    srcHash: ''
   };
 
   return taskInfo;
 }
 
-export const taskInfo = configTaskInfo();
+export const taskInfo = configTaskInfo(); 
 
 export const initConfig = async () => {
   const queryString = new URL(window.location).search;

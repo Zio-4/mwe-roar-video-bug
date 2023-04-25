@@ -31,13 +31,13 @@ timeline.push(preloadImages);
 
 timeline.push(autoPreload)
 
-const videoTrial = {
+export const videoTrial = {
   type: jsPsychVideoButtonResponse,
   stimulus: [
     carVid
   ],
   choices: ["A", "B", "C"],
-  trial_ends_after_video: true,
+  trial_ends_after_video: false,
   response_allowed_while_playing: false,
   response_ends_trial: true,
   controls: true,
