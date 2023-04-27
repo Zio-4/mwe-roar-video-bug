@@ -1,4 +1,4 @@
-import { videoTrial, hotDogTrials } from "../index";
+import { videoTrial, hotDogTrials } from "../../index";
 import { pressKey, simulateTimeline, startTimeline, clickTarget } from "@jspsych/test-utils";
 import jsPsychHtmlKeyboardResponse from '@jspsych/plugin-html-keyboard-response';
 

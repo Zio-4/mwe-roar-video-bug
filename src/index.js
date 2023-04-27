@@ -49,7 +49,7 @@ export const videoTrial = {
 timeline.push(videoTrial);
 
 
-const hotDogTrials = {
+export const hotDogTrials = {
   timeline: [
     {
       type: jsPsychHtmlKeyboardResponse,
@@ -77,7 +77,7 @@ const hotDogTrials = {
           }, 400)
         })
       },
-      response_ends_trial: false,
+      response_ends_trial: true,
       trial_duration: null
       // data: {
       //   // Here is where we specify that we should save the trial to Firestore

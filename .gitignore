@@ -156,3 +156,6 @@ xcuserdata/
 *.xcscmblueprint
 *.xccheckout
 Footer
+/test-results/
+/playwright-report/
+/playwright/.cache/
