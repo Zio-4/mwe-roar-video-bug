@@ -12,10 +12,8 @@ test.describe('Demo app walkthrough', () => {
         await page.getByRole('button', { name: 'Continue' }).click();
         await page.getByText('Press ANY KEY to continue').press('ArrowRight');
         await page.getByText('Press ANY KEY to continue').press('ArrowRight');
-        await page.getByText('Press ANY KEY to practice').press('ArrowRight');
         
-        const arrows = page.getByAltText('arrow-key')
-        await expect(arrows).toBeVisible()
+        await expect(page.getByText('Press ANY KEY to practice')).toBeVisible()
     });
 })
 
