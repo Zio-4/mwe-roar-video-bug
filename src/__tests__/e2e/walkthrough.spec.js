@@ -7,34 +7,15 @@ import { test, expect } from '@playwright/test'
 test.describe('Demo app walkthrough', () => {
       
     test('production test', async ({ page }) => {
-        await page.goto('https://roar-mwe.web.app/');
-        await page.locator('#input-0').click();
-        await page.locator('#input-0').fill('0');
-        await page.locator('#input-0').press('Tab');
-        await page.locator('#input-1').fill('0');
-        await page.locator('#input-1').press('Tab');
-        await page.locator('#input-2').fill('0');
-        await page.locator('#input-2').press('Tab');
-        await page.getByRole('button', { name: 'Continue' }).press('Enter');
-        await page.getByText('Progress Complete The experiment will switch to full screen mode. Click the butt').press('Tab');
-        await page.getByRole('button', { name: 'Continue' }).press('Enter');
 
-        // Get and click 'A' button
-
-        await page.getByRole('button', { name: 'A' }).click()
-
-
-        // hot dog trial
-        expect(page.getByText('Is this a hot dog?')).toBeDefined()
+        await page.goto('https://roar-swr-demo.web.app/');
+        await page.getByRole('button', { name: 'Continue' }).click();
+        await page.getByText('Press ANY KEY to continue').press('ArrowRight');
+        await page.getByText('Press ANY KEY to continue').press('ArrowRight');
+        await page.getByText('Press ANY KEY to practice').press('ArrowRight');
         
-        // Get 'Yes' button and click it x 3
-        // await page.getByRole('button', { name: 'Yes' }).click()
-        // await page.getByRole('button', { name: 'Yes' }).click()
-        // await page.getByRole('button', { name: 'Yes' }).click()
-
-        // await page.getByRole('button', { name: 'A' }).click()
-
-        // expect(page.getByText('Participant ID:')).toBeDefined()
+        const arrows = page.getByAltText('arrow-key')
+        await expect(arrows).toBeVisible()
     });
 })
 
