@@ -11,8 +11,7 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  timeout: 50 * 1000,
-  testDir: './src/__tests__/e2e',
+  testDir: 'src/__tests__/e2e',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,10 +25,11 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.CI_ENVIRONMENT_URL || 'http://localhost:8080/',
+    // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    headless: true
   },
 
   /* Configure projects for major browsers */
@@ -72,8 +72,8 @@ module.exports = defineConfig({
 
   /* Run your local dev server before starting the tests */
   // webServer: {
-  //   command: 'npm run start:dev',
-  //   url: 'http://localhost:8080/',
+  //   command: 'npm run start',
+  //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
 });
